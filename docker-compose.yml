@@ -1,0 +1,32 @@
+---
+version: "3.8"
+
+services:
+  database:
+    container_name: vufind-database
+    build:
+      context: .
+      dockerfile: docker/database/Dockerfile
+    environment:
+      MARIADB_RANDOM_ROOT_PASSWORD: "yes"
+    networks:
+      - vufind
+
+  application:
+    container_name: vufind-application
+    depends_on:
+      - database
+    volumes:
+      - ./vufind-site:/opt/sites/vufind-site
+      - ./vufind:/opt/sites/vufind
+    ports:
+      - "8000:80"
+    build:
+      context: .
+      dockerfile: docker/application/Dockerfile
+    networks:
+      - vufind
+
+networks:
+  vufind:
+    name: vufind
