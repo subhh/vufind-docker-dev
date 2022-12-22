@@ -20,15 +20,19 @@ fi
 echo "Linking site-specific modules"
 for module in vufind-site/module/*
 do
-    echo "...${module}"
-    ln -sf $(pwd)/$module $(pwd)/vufind/module/$(basename $module)
+    if [[ ! -d $(pwd)/vufind/module/$(basename $module) ]]; then
+        echo "...${module}"
+        ln -sf $(pwd)/$module $(pwd)/vufind/module/$(basename $module)
+    fi
 done
 
 echo "Linking site-specific themes"
 for theme in vufind-site/themes/*
 do
-    echo "...${theme}"
-    ln -sf $(pwd)/$theme $(pwd)/vufind/themes/$(basename $theme)
+    if [[ ! -d $(pwd)/vufind/themes/$(basename $theme) ]]; then
+        echo "...${theme}"
+        ln -sf $(pwd)/$theme $(pwd)/vufind/themes/$(basename $theme)
+    fi
 done
 
 if [[ ! -d /opt/sites/vufind/vendor ]]; then
