@@ -12,9 +12,14 @@ if [[ ! -f /etc/apache2/sites-enabled/001-vufind.conf ]]; then
 fi
 
 cd /opt/sites
-if [[ -f vufind-site/composer.local.json ]]; then
+if [[ -f vufind-site/composer.json ]]; then
     echo "Linking site-specific dependencies"
-    ln -sf $(pwd)/vufind-site/composer.local.json $(pwd)/vufind/composer.local.json
+    ln -sf $(pwd)/vufind-site/composer.json $(pwd)/vufind/composer.local.json
+fi
+
+echo "Linking site module"
+if [[ ! -d $(pwd)/vufind/module/Site ]]; then
+    ln -sf $(pwd)/vufind-site $(pwd)/vufind/module/Site
 fi
 
 echo "Linking site-specific modules"
