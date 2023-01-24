@@ -36,6 +36,17 @@ dmaus@carbon ~/vufind-docker-dev % docker-compose --env-file .env up
 Um an verschiedenen Instanzen arbeiten zu können muss die Umgebungsvariable ```APP_IDENT``` gesetzt werden. Der Wert der
 Variable wird im Namen der Docker-Container verwendet.
 
+5. Abhängigkeiten installieren oder erneuern
+
+Um Abhängigkeiten der Instanz zu installieren oder zu aktualisieren mit dem Applikations-Container verbinden, in das
+Installationsverzeichnis wechseln und ```composer``` ausführen.
+
+```
+dmaus@carbon ~/vufind-docker-dev % source .env && docker exec -it vufind-application-${APP_IDENT} /bin/bash
+root@be951c3169c8:~# cd /opt/sites/vufind
+root@be951c3169c8:/opt/sites/vufind# composer update --no-dev
+```
+
 ## Autoren
 
 David Maus &lt;david.maus@sub.uni-hamburg.de&gt;
