@@ -30,8 +30,11 @@ dmaus@carbon ~/katalog-hamburg-dev % ln -s ../hamburg-katalog-module vufind-site
 4. Entwicklungsumgebung starten
 
 ```
-dmaus@carbon ~/vufind-docker-dev % docker-compose up
+dmaus@carbon ~/vufind-docker-dev % docker-compose --env-file .env up
 ```
+
+Um an verschiedenen Instanzen arbeiten zu können muss die Umgebungsvariable ```APP_IDENT``` gesetzt werden. Der Wert der
+Variable wird im Namen der Docker-Container verwendet.
 
 ## Autoren
 
