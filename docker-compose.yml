@@ -3,7 +3,7 @@ version: "3.8"
 
 services:
   database:
-    container_name: vufind-database
+    container_name: vufind-database-${APP_IDENT}
     build:
       context: .
       dockerfile: docker/database/Dockerfile
@@ -13,7 +13,7 @@ services:
       - vufind
 
   application:
-    container_name: vufind-application
+    container_name: vufind-application-${APP_IDENT}
     depends_on:
       - database
     volumes:
