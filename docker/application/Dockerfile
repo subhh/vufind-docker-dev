@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get -y upgrade
 
 # 0. Prepare base system
 
