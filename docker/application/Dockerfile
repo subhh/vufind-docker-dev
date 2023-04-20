@@ -20,7 +20,7 @@ RUN a2dissite 000-default
 # 1. Install VuFind
 
 ENV VUFIND_HOME /opt/sites/vufind
-ENV VUFIND_LOCAL_DIR /opt/sites/vufind-site/local/docker
+ENV VUFIND_LOCAL_DIR /opt/sites/vufind-site
 ENV VUFIND_CACHE_DIR /tmp/vufind
 ENV VUFIND_ENV development
 
