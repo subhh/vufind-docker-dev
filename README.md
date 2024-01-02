@@ -17,7 +17,7 @@ dmaus@carbon ~ % git clone --recursive https://github.com/subhh/vufind-docker-de
 
 ```
 dmaus@carbon ~ % cd ~/katalog-hamburg-dev
-dmaus@carbon ~/katalog-hamburg-dev % git clone --recursive -b subhh-local --single-branch https://github.com/subhh/vufind.git
+dmaus@carbon ~/katalog-hamburg-dev % git clone --recursive -b subhh/v9.1 --single-branch https://github.com/subhh/vufind.git
 ```
 
 3. Seitenspezifische Konfiguration als Verzeichnis ```vufind-site``` auschecken oder verlinken.
