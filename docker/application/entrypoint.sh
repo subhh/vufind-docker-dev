@@ -8,7 +8,7 @@ fi
 
 echo "Enabling Apache configuration"
 if [[ ! -f /etc/apache2/sites-enabled/001-vufind.conf ]]; then
-    ln -s /opt/sites/vufind-site/local/docker/config/httpd-vufind.conf /etc/apache2/sites-enabled/001-vufind.conf
+    ln -s /opt/sites/vufind-site/config/httpd-vufind.conf /etc/apache2/sites-enabled/001-vufind.conf
 fi
 
 cd /opt/sites
