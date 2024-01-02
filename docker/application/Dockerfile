@@ -11,7 +11,7 @@ RUN apt-get -y install software-properties-common unzip
 RUN add-apt-repository ppa:ondrej/php
 RUN apt-get update
 RUN apt-get -y install git sudo
-RUN apt-get -y install libapache2-mod-php7.4 php7.4-zip php7.4-mbstring php7.4 php7.4-dev php7.4-gd php7.4-intl php7.4-json php7.4-ldap php7.4-mysql php7.4-xml php7.4-soap php7.4-curl
+RUN apt-get -y install libapache2-mod-php8.0 php8.0-zip php8.0-mbstring php8.0 php8.0-dev php8.0-gd php8.0-intl php8.0-ldap php8.0-mysql php8.0-xml php8.0-soap php8.0-curl
 
 RUN a2enmod rewrite
 RUN a2enmod proxy_http
